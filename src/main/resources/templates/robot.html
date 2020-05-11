@@ -2,10 +2,11 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="ISO-8859-1">
+<link rel="stylesheet" href="src/main/resources/static/style/main.css"  th:href = "@{/style/main.css}" type="text/css">
 <title>Ya te agarro la ONU R2D2</title>
 </head>
 <body>
-	<div class = "wrapper">
+	<div class = "main-form">
 		<form th:action="@{/seguridad}" th:object="${robot}" method="post">
 			<div class="security">
 				<span th:errors="*{soyRobot}"></span><br>
@@ -14,7 +15,7 @@
 			</div>
 			
 			<input type="submit" value="Aceptar"><br>
-			<a href="/producto"><input type="button" value="Resgresar"></a>
+			<a href="/producto"><input type="button" value="Regresar"></a>
 			
 		</form>
 	</div>
