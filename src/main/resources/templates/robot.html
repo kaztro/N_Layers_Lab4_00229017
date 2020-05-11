@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Ya te agarro la ONU R2D2</title>
+</head>
+<body>
+	<div class = "wrapper">
+		<form th:action="@{/seguridad}" th:object="${robot}" method="post">
+			<div class="security">
+				<span th:errors="*{soyRobot}"></span><br>
+				<label>No soy un robot</label>
+				<input type="checkbox" th:field="*{soyRobot}" th:value="${false}">
+			</div>
+			
+			<input type="submit" value="Aceptar"><br>
+			<a href="/producto"><input type="button" value="Resgresar"></a>
+			
+		</form>
+	</div>
+</body>
+</html>

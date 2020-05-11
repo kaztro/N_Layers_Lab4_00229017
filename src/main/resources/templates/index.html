@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Venta de producto</title>
+</head>
+<body>
+	<div class = "wrapper">
+		<h1>Ingresar producto</h1>
+		<form th:action="@{/formProducto}" th:object="${producto}" method="post">
+			<div>
+				<span th:errors="*{nombre}"></span><br>
+				<label>Nombre del producto<span class="required">*</span> </label><input type="text" th:field="*{nombre}"/>
+							
+			</div>
+			
+			<div>
+				<span th:errors="*{descripcion}"></span><br>
+				<label>Descripción del producto<span class="required">*</span> </label><br>
+				<textarea th:field="*{descripcion}" placeholder="Describe brevemente"></textarea>
+			</div>
+			
+			<div>
+				<span th:errors="*{precio}"></span><br>
+				<label>Precio del producto<span class="required">*</span> </label><br>
+				<input type="number" th:field="*{precio}"/>
+
+			</div>
+			
+			<div>
+				<span th:errors="*{vencimiento}"></span><br>
+				<label>Fecha de vencimiento<span class="required">*</span> </label><br>
+				<input type="text" th:field="*{vencimiento}"/>
+			</div>
+			
+			<input type="submit" value="Agregar producto"/>
+			
+		</form>
+	</div>
+</body>
+</html>
